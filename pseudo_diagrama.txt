@@ -5,6 +5,9 @@ microservico_usuario: {
 		cpf: string
 		endeco: string
 		role: enum {0: 'cliente', 1: 'funcionario'}
+	},
+	tecnologias: {
+	
 	}
 }
 
@@ -14,6 +17,11 @@ microservico_produto: {
 		preco: float,
 		fornecedo_cnpj: string
 		descricao: 'string'
+	}, 
+	tecnologias: {
+		linguagem: python
+		framework: flask
+		db: postgres
 	}
 }
 
@@ -23,6 +31,13 @@ microservico_carrinho :{
 		lista_produtos: [class_produto],
 		data_emitido: Timestemp,
 		ativo: boolean
+	},
+	tecnologias: {
+		comunicacao: gRPC,
+		linguagem: TypeScript,
+		ORM: typeorm,
+		db: MongoDB,
+		grpc/proto-loader
 	}
 }
 
@@ -40,17 +55,18 @@ microservico_pedido{
 				descricao: 'string'
 			},
 		]
+	},
+	tecnologias: {
+	
 	}
 }
 
-backlog:{
-	log{
-		log: string "funcionario_id_5 criou produto_id_8 diaXXXXXX"
-	}
-}
 
 microservico_relatorio: {
-	gateway_event: {"gera relatorios"}
+	gateway_event: {"gera relatorios"},
+	tecnologias: {
+	
+	}
 }
 
 api_gateway{
@@ -64,6 +80,9 @@ api_gateway{
 		- deve conter as regras de login social
 		- retorna token de autenticação (JWT)
 		- valida token (JWT)
+	},
+	tecnologias: {
+
 	}
 
 }
