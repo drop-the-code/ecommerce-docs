@@ -1,0 +1,69 @@
+microservico_usuario: {
+	db_user: {
+		nome: string
+		email: string
+		cpf: string
+		endeco: string
+		role: enum {0: 'cliente', 1: 'funcionario'}
+	}
+}
+
+microservico_produto: {
+	db_produto: {
+		nome: string,
+		preco: float,
+		fornecedo_cnpj: string
+		descricao: 'string'
+	}
+}
+
+microservico_carrinho :{
+	db_carrinho: {
+		cliente: class_cliente,
+		lista_produtos: [class_produto],
+		data_emitido: Timestemp,
+		ativo: boolean
+	}
+}
+
+microservico_pedido{
+	db_pedido: {
+		preco_total: float
+		cliente: {id: int, cpf: string}
+		gerador_de_recibo: médodo?
+		carrinho: [
+			produto: {
+				id: int
+				nome: string,
+				preco: float,
+				fornecedo_cnpj: string
+				descricao: 'string'
+			},
+		]
+	}
+}
+
+backlog:{
+	log{
+		log: string "funcionario_id_5 criou produto_id_8 diaXXXXXX"
+	}
+}
+
+microservico_relatorio: {
+	gateway_event: {"gera relatorios"}
+}
+
+api_gateway{
+	- api_gateway é o intermediario (middleware) entre o front-end e os microservicos
+	- api_gateway é o servidor para o front-end (metodos HTTP)
+	- api_gateway é o cliente para os microservicos (gRPC)
+	- ira conter todos os endpoints que a aplicação front-end necessitar
+	- ira conter todas as regras de comunicação com os microservicos
+	- deve fazer a autenticação das requests
+	autenticacao: {
+		- deve conter as regras de login social
+		- retorna token de autenticação (JWT)
+		- valida token (JWT)
+	}
+
+}
