@@ -15,5 +15,7 @@
 * Carlos
     * Kubernetes
     * oAuth
+      * [x] google
+      * [x] github
     * Api Gateway 
     * Relatórios 
