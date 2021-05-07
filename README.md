@@ -17,5 +17,6 @@
     * oAuth
       * [x] google
       * [x] github
-    * Api Gateway 
+    * Api Gateway
+    * Pedidos 
     * Relatórios 
